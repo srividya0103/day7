@@ -1,0 +1,41 @@
+package day7.task2;
+public class MainExecution {
+
+	public static void main(String[] args) {
+		
+		EmployeeService service = new EmployeeService();
+		String codes[] = service.getEmployeeCodes();
+		
+		
+        
+		String citycodes[] = service.getEmployeeCityCodes();
+		
+	
+	for(int i = 0; i < codes.length; i++) {	
+		
+		try
+		{
+			
+			service.docheckcity(citycodes[i]);
+			System.out.println("Employee ID  "+codes[i]);
+			if(citycodes[i].equals("011") ) {
+				System.out.println("CITY 011 -- DELHi");
+			}
+			else if(citycodes[i].equals("022")) {
+				System.out.println("CITY 022 -- MUMBAI");
+			}
+			else if(citycodes[i].equals("080")) {
+				System.out.println("CITY 080 -- BANGLORE");
+			}
+			else if(citycodes[i].equals("020")) {
+				System.out.println("CITY 020 -- PUNE");
+			}
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+		}
+		
+	}
+}
+}
